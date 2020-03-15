@@ -1,0 +1,68 @@
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<head>
+    <style>
+        #users {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #users td,
+        #users th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #users tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #users tr:hover {
+            background-color: #ddd;
+        }
+
+        #users th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: rgb(21, 199, 169);
+            color: white;
+        }
+    </style>
+    <style>
+        /* var a=document.getElementById() function get_link() {} */
+    </style>
+</head>
+
+<body>
+    <table id="users">
+        <tr>
+            <th>Task ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Created On</th>
+            <th>Assigned To</th>
+            <th>Created By</th>
+        </tr>
+        {% for i in tasks %}
+        <tr>
+            <!-- <td>{{ i.task_id }}</a> </td> -->
+            <td id="link"><a href={{'/update/%s'%i.task_id|urlencode}}>{{i.task_id}}</a></td>
+            <td>{{ i.task_subject }}</td>
+            <td>{{ i.task_description }}</td>
+            <td>{{ i.created_at }}</td>
+            <td>{{ i.assigned_to }}</td>
+            <td>{{ i.created_by }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button><a href="/new_task">New Task</a></button>
+</body>
+
+</html>

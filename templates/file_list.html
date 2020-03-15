@@ -1,0 +1,59 @@
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<head>
+    <style>
+        #users {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #users td,
+        #users th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #users tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #users tr:hover {
+            background-color: #ddd;
+        }
+
+        #users th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: rgb(21, 199, 169);
+            color: white;
+        }
+    </style>
+    <style>
+        /* var a=document.getElementById() function get_link() {} */
+    </style>
+</head>
+
+<body>
+    <table id="users">
+        <tr>
+            <th>Task ID</th>
+            <th>File Name</th>
+        </tr>
+        {% for i in files %}
+        <tr>
+            <!-- <td>{{ i.task_id }}</a> </td> -->
+            <td>{{i['task_id']}}</a></td>
+            <td id="link"><a href={{'/open_file/%s'%i['file_id']|urlencode}}>{{i['file_name']}}</a>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
