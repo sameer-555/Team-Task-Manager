@@ -12,35 +12,44 @@
             border-collapse: collapse;
             width: 100%;
         }
-
+        
         #users td,
         #users th {
-            border: 1px solid #ddd;
+            border: 1px solid rgb(19, 18, 18);
             padding: 8px;
         }
-
+        
         #users tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-
+        
         #users tr:hover {
             background-color: #ddd;
         }
-
+        
         #users th {
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: rgb(21, 199, 169);
+            background-color: black;
             color: white;
         }
     </style>
     <style>
         /* var a=document.getElementById() function get_link() {} */
     </style>
+    <style>
+        #grad1 {
+            height: 1000px;
+            background-color: rgb(21, 255, 0);
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(rgb(20, 187, 199), rgb(235, 213, 143));
+            /* Standard syntax (must be last) */
+        }
+    </style>
 </head>
 
-<body>
+<body id="grad1">
     <table id="users">
         <tr>
             <th>Task ID</th>
@@ -53,7 +62,7 @@
         {% for i in tasks %}
         <tr>
             <!-- <td>{{ i.task_id }}</a> </td> -->
-            <td id="link"><a href={{'/update/%s'%i.task_id|urlencode}}>{{i.task_id}}</a></td>
+            <td id="link"><a href={{ '/update/%s'%i.task_id|urlencode}}>{{i.task_id}}</a></td>
             <td>{{ i.task_subject }}</td>
             <td>{{ i.task_description }}</td>
             <td>{{ i.created_at }}</td>
@@ -63,6 +72,8 @@
         {% endfor %}
     </table>
     <button><a href="/new_task">New Task</a></button>
+    <br><br><br>
+    <button><a href="/">Home Page</a></button>
 </body>
 
 </html>

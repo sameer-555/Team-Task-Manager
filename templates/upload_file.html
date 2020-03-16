@@ -1,4 +1,9 @@
 <html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <style type="text/css">
     .form-style-5 {
         max-width: 500px;
@@ -6,25 +11,27 @@
         background: #f4f7f8;
         margin: 10px auto;
         padding: 20px;
-        background: #f4f7f8;
+        background-image: linear-gradient(rgb(20, 187, 199), rgb(235, 213, 143));
+        /* background: rgb(21, 255, 0); */
         border-radius: 8px;
         font-family: Georgia, "Times New Roman", Times, serif;
     }
-
+    
     .form-style-5 fieldset {
         border: none;
     }
-
+    
     .form-style-5 legend {
-        font-size: 1.4em;
+        font-size: 2em;
+        text-align: center;
         margin-bottom: 10px;
     }
-
+    
     .form-style-5 label {
         display: block;
         margin-bottom: 8px;
     }
-
+    
     .form-style-5 input[type="text"],
     .form-style-5 input[type="date"],
     .form-style-5 input[type="datetime"],
@@ -53,7 +60,7 @@
         box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
         margin-bottom: 30px;
     }
-
+    
     .form-style-5 input[name="cd"]:focus,
     .form-style-5 input[name="ts"]:focus,
     .form-style-5 input[name="td"]:focus,
@@ -62,12 +69,12 @@
     .form-style-5 select:focus {
         background: #d2d9dd;
     }
-
+    
     .form-style-5 select {
         -webkit-appearance: menulist-button;
         height: 35px;
     }
-
+    
     .form-style-5 .number {
         background: #1abc9c;
         color: #fff;
@@ -81,42 +88,83 @@
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
         border-radius: 15px 15px 15px 0px;
     }
-
+    
     .form-style-5 input[type="submit"],
     .form-style-5 input[type="button"] {
-        position: relative;
+        position: static;
         display: block;
         padding: 19px 39px 18px 39px;
-        color: #FFF;
+        color: rgb(51, 14, 4);
         margin: 0 auto;
-        background: #1abc9c;
-        font-size: 18px;
+        background: #aaafafe3;
+        font-size: 20px;
         text-align: center;
         font-style: normal;
-        width: 100%;
-        border: 1px solid #16a085;
-        border-width: 1px 1px 3px;
+        width: 50%;
+        border: 1px solid #0f1111;
+        border-width: 1px 1px 2px;
         margin-bottom: 10px;
     }
-
+    
     .form-style-5 input[type="submit"]:hover,
     .form-style-5 input[type="button"]:hover {
-        background: #109177;
+        background: #4e9587;
+    }
+</style>
+<style>
+    .upload-btn-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+    
+    .btn {
+        border: 2px solid gray;
+        color: gray;
+        background-color: white;
+        padding: 8px 20px;
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .upload-btn-wrapper input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+    
+    #grad1 {
+        height: 1000px;
+        background-color: rgb(21, 255, 0);
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(rgb(20, 187, 199), rgb(235, 213, 143));
+        /* Standard syntax (must be last) */
     }
 </style>
 
-<body>
+<body id="grad1"><br><br><br><br><br><br>
     <div class="form-style-5">
         <form action="/upload_file" method="POST" enctype="multipart/form-data">
             <fieldset>
-                <legend>New Task</legend>
+                <legend><b>New Task</b></legend>
                 Task ID<br>
                 <input type="text" name="fti" /></br>
                 <label for='file'>File Name</label></br>
                 <input type="file" name="file">
+                <!-- <div class="upload-btn-wrapper">
+                    <button class="btn">Upload a file</button>
+                    <input type="file" name="file">
+                </div><br> -->
                 <fieldset>
                     <input type="submit" value="upload">
                 </fieldset>
+                <fieldset>
+                    <input type="submit" value="Uploaded File" formaction="/uploaded_file">
+                </fieldset>
+            </fieldset>
         </form>
 
     </div>
