@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
 </head>
 <style>
     #grad1 {
@@ -17,6 +18,12 @@
         /* For browsers that do not support gradients */
         background-image: linear-gradient(rgb(20, 187, 199), rgb(235, 213, 143));
         /* Standard syntax (must be last) */
+    }
+
+    .fa-file {
+        color: rgb(0, 234, 255);
+        font-size: 7em;
+        margin: 1rem;
     }
 </style>
 
@@ -31,22 +38,31 @@
         <div class="row">
             <div class="col-sm-4">
                 <a class="nav-link" href="/new_task">
-                    <img src="https://static.thenounproject.com/png/534029-200.png" alt="new_task" width="150" height="150">
+                    <img src="https://static.thenounproject.com/png/534029-200.png" alt="new_task" width="150"
+                        height="150">
                 </a>
             </div>
             <div class="col-sm-4">
                 <a class="nav-link" href="/task_list">
-                    <img src="https://st3.depositphotos.com/1548395/13487/i/1600/depositphotos_134873410-stock-photo-3d-render-of-to-do.jpg" alt="todo" width="150" height="150">
+                    <img src="https://st3.depositphotos.com/1548395/13487/i/1600/depositphotos_134873410-stock-photo-3d-render-of-to-do.jpg"
+                        alt="todo" width="150" height="150">
                 </a>
             </div>
             <div class="col-sm-4">
                 <a class="nav-link" href="/task_completed">
-                    <img src="https://www.iconshock.com/image/Sigma/Project_management/task_completed/" alt="Completed" width="150" height="150">
+                    <img src="https://www.iconshock.com/image/Sigma/Project_management/task_completed/" alt="Completed"
+                        width="150" height="150">
                 </a>
             </div>
             <div class="col-sm-5">
                 <a class="nav-link" href="/upload_file">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Cloud_upload_font_awesome.svg/512px-Cloud_upload_font_awesome.svg.png" alt="upload_file" width="150" height="150">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Cloud_upload_font_awesome.svg/512px-Cloud_upload_font_awesome.svg.png"
+                        alt="upload_file" width="150" height="150">
+                </a>
+            </div>
+            <div class="col-sm-5">
+                <a class="nav-link" href="/uploaded_file">
+                    <i class="fas fa-file"></i>
                 </a>
             </div>
         </div>
