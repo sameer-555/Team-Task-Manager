@@ -95,7 +95,7 @@ def upload_file():
         )
         db.session.add(newFile)
         db.session.commit()
-        return "File Uploded sucessfully"
+        return redirect("uploaded_file")
     else:
         return "there was an issue while uploading"
 
